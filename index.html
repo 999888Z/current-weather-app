@@ -23,7 +23,7 @@
     <main>
       <div class="container">
         <div class="row pt-5">
-          <div class="col-xl-2 bg-success mr-3">
+          <div class="col-xl-2 mr-3 bg-success">
             <h5>Search for a city</h5>
             <div class="input-group mb-3">
               <input
@@ -37,17 +37,67 @@
             </div>
 
             <div>
-              <button type="button" id="city-search" class="btn btn-warning">Search</button>
+              <button type="button" id="city-search" class="btn btn-warning">
+                Search
+              </button>
             </div>
           </div>
-
-          <div class="col-xl-7 bg-warning">
-            <h2 id="location"></h2>
+          <div class="col-xl-9">
+            <div class="temp-box">
+              <h2 id="spot"></h2>
+              <p id="current-temp"></p>
+              <p id="wind-speed"></p>
+              <p id="humidity"></p>
+            </div>
+            <p class="five">5-Day Forecast</p>
+            <div class="row ml-5">
+              
+              
+<!-- These are the 5-Day Forecast boxes -->
+              <div class="col-xl-2 temp-box mr-3 fns">
+                <p id="day1"></p>
+                <p id="emoji1"></p>
+                <p id="temp1"></p>
+                <p id="wind1"></p>
+                <p id="humidity1"></p>
+              </div>
+              <div class="col-xl-2 temp-box mr-3 fns">
+                <p id="day2"></p>
+                <p id="emoji2"></p>
+                <p id="temp2"></p>
+                <p id="wind2"></p>
+                <p id="humidity2"></p>
+              </div>
+              <div class="col-xl-2 temp-box mr-3 fns">
+                <p id="day3"></p>
+                <p id="emoji3"></p>
+                <p id="temp3"></p>
+                <p id="wind3"></p>
+                <p id="humidity3"></p>
+              </div>
+              <div class="col-xl-2 temp-box mr-3 fns">
+                <p id="day4"></p>
+                <p id="emoji4"></p>
+                <p id="temp4"></p>
+                <p id="wind4"></p>
+                <p id="humidity4"></p>
+              </div>
+              <div class="col-xl-2 temp-box mr-3 fns">
+                <p id="day5"></p>
+                <p id="emoji5"></p>
+                <p id="temp5"></p>
+                <p id="wind5"></p>
+                <p id="humidity5"></p>
+              </div>
           </div>
         </div>
       </div>
     </main>
-
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
     <script src="./assets/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,19 @@
+.temp-box {
+    width: 100%;
+    background-color: blue;
+    height: 200px;
+    border-radius: 7px;
+    box-shadow: 5px 10px grey;
+}
+
+.five {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.fns {
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
