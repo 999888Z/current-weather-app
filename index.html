@@ -19,8 +19,8 @@
         <h1 class="text-center text-white">Weather Dashboard</h1>
       </div>
     </header>
-
-    <main>
+<!-- This is the search for a city text input box and search button and saved searches -->
+    <main class="bkg-color">
       <div class="container">
         <div class="row pt-5">
           <div class="col-xl-2 mr-3 mt-3 grad">
@@ -34,14 +34,20 @@
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
+              
             </div>
+            
 
             <div>
               <button type="button" id="city-search" class="btn search-button">
                 Search
               </button>
             </div>
+
+            <div class="row" id="previous-searches">
+            </div>
           </div>
+          
           <!-- //This is the beginning of the current temp area. -->
           <div class="col-xl-9">
             <div class="temp-box">
