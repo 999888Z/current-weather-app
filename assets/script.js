@@ -33,44 +33,44 @@ var wind5 = document.getElementById("wind5");
 var humidity5 = document.getElementById("humidity5");
 var allSearches = [];
 
-var storedCities = JSON.parse(localStorage.getItem("savedCity"))
+//Pulls saved city data from local storage
+var storedCities = JSON.parse(localStorage.getItem("savedCity"));
 if (storedCities) {
-
-
-for (let i = 0; i < storedCities.length; i++) {
- saveCityName(storedCities[i])
-  
+  for (let i = 0; i < storedCities.length; i++) {
+    addButton(storedCities[i]);
+  }
 }
+function addButton(cityName) {
+  // Created if statement to check for duplicate cities within array
+  if (allSearches.includes(cityName)) {
+  } else {
+    // Dynamically creates buttons on left side
+    var cityBTN = document.createElement("button");
+
+    cityBTN.setAttribute("value", cityName);
+    cityBTN.type = "submit";
+    cityBTN.innerText = cityName;
+    cityBTN.setAttribute("class", "past-search");
+    cityBTN.setAttribute("id", "past-searches");
+    citiesContainer.appendChild(cityBTN);
+    allSearches.push(cityName);
+    localStorage.setItem("savedCity", JSON.stringify(allSearches));
+  }
 }
+// Created function to take take the input from input box
 function getCityName() {
   var city = cityName.value;
   saveCityName(city);
 }
-
+// Created function to turn inputted city name into lat lon data
 function saveCityName(cityInput) {
-
   var latLongFinder =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     cityInput +
     "&appid=9674a6a8f4915aca684dd5788eec83bf";
 
-  // Created if statement to check for duplicate cities within array
+  addButton(cityInput);
 
-  if (allSearches.includes(cityInput)) {
-  } else {
-    // Created buttons dynamically for past searches
-    var cityBTN = document.createElement("button");
-
-    cityBTN.setAttribute("value", cityInput);
-    cityBTN.type = "submit";
-    cityBTN.innerText = cityInput;
-    cityBTN.setAttribute("class", "past-search");
-    cityBTN.setAttribute("id", "past-searches");
-    citiesContainer.appendChild(cityBTN);
-    allSearches.push(cityInput);
-
-    localStorage.setItem("savedCity", JSON.stringify(allSearches));
-  }
   fetch(latLongFinder)
     .then(function (response) {
       return response.json();
@@ -81,7 +81,7 @@ function saveCityName(cityInput) {
       getWeatherData(lat, lon, cityInput);
     });
 }
-
+// Created a function to access data from API using lat and lon
 function getWeatherData(lat, lon, city) {
   var urlAPI =
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -189,8 +189,10 @@ function getWeatherData(lat, lon, city) {
 
       var humidDay5 = data.list[39].main.humidity;
       humidity5.innerText = "Humidity: " + humidDay5 + " %";
-    });
 
+      cityName.value = "";
+    });
+  // Created emojis to display in various weather
   function getEmoji(emojiSign) {
     if (emojiSign === "Clouds") {
       return "☁️";
@@ -207,35 +209,12 @@ function getWeatherData(lat, lon, city) {
     }
   }
 }
-
+// Created function to get value from button click of saved cities/searches
 function pastCities(event) {
   var buttonValue = event.target.value;
   saveCityName(buttonValue);
 }
-
+// Created listener for clicking on Search button
 document.querySelector("#city-search").addEventListener("click", getCityName);
-
+// Created listener for clicking on saved cities
 citiesContainer.addEventListener("click", pastCities);
-// function saveToStorage() {
-//   localStorage.setItem("city", JSON.stringify(city));
-// }
-
-// var cities = cityName.value;
-
-// if (!city.includes(cities)) {
-//   city.push(cities);
-//   console.log(city);
-//   saveToStorage();
-// }
-// renderCities();
-
-// getWeather(cities);
-
-// renderCities()
-
-// document.querySelector(".previousSearches").addEventListener("click", ".oldCity", saveCityName)
-// saveCityName.preventDefault();
-
-// var cityList = $(this).text();
-
-// getWeather(cityList);

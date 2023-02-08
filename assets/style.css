@@ -1,56 +1,58 @@
 .top {
-    background: linear-gradient(45deg,blue,yellow);
+  background: linear-gradient(45deg, blue, yellow);
 }
 
 .past-search {
-    background-color: rgb(145, 107, 180);
-    color: white;
-    text-align: center;
-    width: 100%;
-
+  background-color: #dada25;
+  color: rgb(73, 97, 247);
+  text-align: center;
+  width: 90%;
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
 }
 .bkg-color {
-    background: linear-gradient(to top,white,rgb(73, 97, 247));
-    
-    height: 100vh;
+  background: linear-gradient(to top, white, rgb(73, 97, 247));
+
+  height: 100vh;
 }
 
 .grad {
-    background: linear-gradient(to top,blue,#a4d3dd);
-    border-radius: 7px;
-    box-shadow: 5px 10px rgb(40, 24, 24);
-
+  background: linear-gradient(to top, blue, #a4d3dd);
+  border-radius: 7px;
+  box-shadow: 5px 10px rgb(40, 24, 24);
 }
 
 .search-button {
-    background-color: rgb(145, 107, 180);
-    color: white;
-    text-align: center;
-    width: 100%;
+  background-color: rgb(145, 107, 180);
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 .temp-box {
-    width: 100%;
-    background: linear-gradient(to top,blue,#a4d3dd);
-    height: 200px;
-    border-radius: 7px;
-    box-shadow: 5px 10px rgb(40, 24, 24);
+  width: 100%;
+  background: linear-gradient(to top, blue, #a4d3dd);
+  height: 200px;
+  border-radius: 7px;
+  box-shadow: 5px 10px rgb(40, 24, 24);
 }
 
 .five {
-    margin-top: 10px;
-    font-size: 25px;
-    font-weight: bold;
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .fns {
-    font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .emoji {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 3px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 3px;
 }
